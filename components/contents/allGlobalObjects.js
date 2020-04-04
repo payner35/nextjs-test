@@ -77,7 +77,10 @@ const AllGlobalObjects = ({globalObjects, projectId, auth}) => {
     
     const _goObject = (someObject) => {
         setSelectedItem(someObject.id);
-        Router.push(`/content/${projectId}/${someObject.id}`);
+        Router.push(
+          `/content/[projectId]/[contentId]`, 
+          `/content/${projectId}/${someObject.id}`
+        );
     };
     
     const _searchUpdated = (term) => {
